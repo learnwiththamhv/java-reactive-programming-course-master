@@ -9,10 +9,11 @@ import java.util.stream.Stream;
 public class Lec02HotShare {
 
     public static void main(String[] args) {
-
+        // Hot Publisher: One Publisher for all the Subscribers
+        // Can emit data without subscriber (autoConnect(0) no Subscriber required)
         Flux<String> movieStream = Flux.fromStream(() -> getMovie())
                 .delayElements(Duration.ofSeconds(2))
-                .share();
+                .share(); //Convert Cold to Hot Publisher
 
         movieStream
                 .subscribe(Util.subscriber("sam"));

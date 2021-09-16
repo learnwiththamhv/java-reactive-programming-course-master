@@ -20,7 +20,7 @@ public class Lec07Timeout {
 
     private static Flux<Integer> getOrderNumbers(){
         return Flux.range(1, 10)
-                    .delayElements(Duration.ofSeconds(5));
+                    .delayElements(Duration.ofSeconds(Util.faker().random().nextInt(1, 5)));
     }
 
     private static Flux<Integer> fallback(){

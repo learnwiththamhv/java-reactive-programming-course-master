@@ -13,7 +13,7 @@ public class Lec02FluxCreateRefactoring {
         Flux.create(nameProducer)
                 .subscribe(Util.subscriber());
 
-        Runnable runnable = nameProducer::produce;
+        Runnable runnable = () -> nameProducer.produce();
 
         for (int i = 0; i < 10; i++) {
             new Thread(runnable).start();

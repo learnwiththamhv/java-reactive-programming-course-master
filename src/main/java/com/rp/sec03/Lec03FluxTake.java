@@ -11,7 +11,7 @@ public class Lec03FluxTake {
         // filter
         Flux.range(1, 10)
                 .log()
-                .take(3) // cancels
+                .take(3) // get 3 items then rising cancels signal
                 .log()
                 .subscribe(Util.subscriber());
 

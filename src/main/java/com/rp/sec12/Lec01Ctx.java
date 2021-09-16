@@ -7,7 +7,7 @@ import reactor.util.context.Context;
 public class Lec01Ctx {
 
     public static void main(String[] args) {
-
+        // Context is similar to Header in HTTP. It uses a key-value structure to store additional information
         getWelcomeMessage()
                 .contextWrite(ctx -> ctx.put("user", ctx.get("user").toString().toUpperCase()))
                 .contextWrite(Context.of("user", "sam"))

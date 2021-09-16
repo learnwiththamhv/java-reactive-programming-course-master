@@ -11,7 +11,7 @@ public class Lec11SwitchOnFirst {
     public static void main(String[] args) {
 
         getPerson()
-                .switchOnFirst((signal, personFlux) -> {
+                .switchOnFirst((signal, personFlux) -> { //Depends only first item
                     System.out.println("inside switch-on-first");
                     return signal.isOnNext() && signal.get().getAge() > 10 ? personFlux : applyFilterMap().apply(personFlux);
                 })

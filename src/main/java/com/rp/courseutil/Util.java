@@ -3,11 +3,12 @@ package com.rp.courseutil;
 import com.github.javafaker.Faker;
 import org.reactivestreams.Subscriber;
 
+import java.util.Locale;
 import java.util.function.Consumer;
 
 public class Util {
 
-    private static final Faker FAKER = Faker.instance();
+    private static final Faker FAKER = Faker.instance(new Locale("vi-VN"));
 
     public static Consumer<Object> onNext(){
         return o -> System.out.println("Received : " + o);

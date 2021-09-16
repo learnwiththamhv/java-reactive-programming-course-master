@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 public class Lec01ColdPublisher {
 
     public static void main(String[] args) {
-
+        //Cold Publisher: Subscriber has its own Publisher
         Flux<String> movieStream = Flux.fromStream(() -> getMovie())
                 .delayElements(Duration.ofSeconds(2));
 

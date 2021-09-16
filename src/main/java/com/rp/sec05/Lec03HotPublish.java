@@ -13,7 +13,7 @@ public class Lec03HotPublish {
         Flux<String> movieStream = Flux.fromStream(() -> getMovie())
                 .delayElements(Duration.ofSeconds(1))
                 .publish()
-                .refCount(1);
+                .refCount(1); // Need at least 1 subscriber to emit the content
 
         movieStream
                 .subscribe(Util.subscriber("sam"));

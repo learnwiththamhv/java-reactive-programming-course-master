@@ -12,7 +12,8 @@ public class Lec02SubscribeOnDemo {
             printThreadName("create");
             fluxSink.next(1);
         })
-         .subscribeOn(Schedulers.newParallel("vins"))
+        //will switch to Scheduler Thread
+         .subscribeOn(Schedulers.newParallel("vins")) // Near the source is priority one 
         .doOnNext(i -> printThreadName("next " + i));
 
 

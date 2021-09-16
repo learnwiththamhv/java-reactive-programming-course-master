@@ -11,6 +11,8 @@ public class Lec08FluxPush {
 
         NameProducer nameProducer = new NameProducer();
 
+        //Flux.push - is NOT thread safe, uses in single thread
+        //Flux.create - is thread safe
         Flux.create(nameProducer)
                 .subscribe(Util.subscriber());
 

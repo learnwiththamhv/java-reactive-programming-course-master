@@ -32,7 +32,7 @@ public class Lec03SinkThreadSafety {
         for (int i = 0; i < 1000; i++) {
             final int j = i;
             CompletableFuture.runAsync(() -> {
-                sink.emitNext(j, (s, e) -> true);
+                sink.emitNext(j, (s, e) -> true); // retry in case of error
             });
         }
 

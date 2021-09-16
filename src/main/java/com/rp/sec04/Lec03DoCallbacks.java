@@ -7,6 +7,9 @@ public class Lec03DoCallbacks {
 
     public static void main(String[] args) {
 
+        //doFirst() is executed from bottom to up -> subscribe 
+        //doOnSubscribe() is executed from top to bottom
+        // Publisher sends Subscription to Subscriber
         Flux.create(fluxSink -> {
             System.out.println("inside create");
             for (int i = 0; i < 5; i++) {

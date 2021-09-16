@@ -15,7 +15,7 @@ public class Lec04SinkMulti {
         Flux<Object> flux = sink.asFlux();
 
 
-
+        // When there is no subscriber, values are kept in the buffer
         sink.tryEmitNext("hi");
         sink.tryEmitNext("how are you");
 

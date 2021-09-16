@@ -8,7 +8,7 @@ public class Lec07FluxGenerateCounter {
     public static void main(String[] args) {
 
         Flux.generate(
-                () -> 1,
+                () -> 1, //state
                 (counter, sink) -> {
                    String country = Util.faker().country().name();
                    sink.next(country);

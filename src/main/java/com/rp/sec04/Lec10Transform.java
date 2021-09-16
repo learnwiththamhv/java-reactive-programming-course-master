@@ -8,6 +8,8 @@ import java.util.function.Function;
 
 public class Lec10Transform {
 
+    // transform help to build common steps separately
+    // and include any pipeline you want
     public static void main(String[] args) {
 
             getPerson()
